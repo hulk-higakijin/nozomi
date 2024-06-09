@@ -18,6 +18,7 @@ gem 'rails_admin', '~> 3.0'
 gem 'rails-i18n'
 gem 'redis', '>= 4.0.1'
 gem 'sassc-rails'
+gem 'sorbet-runtime'
 gem 'sprockets-rails'
 gem 'stimulus-rails'
 gem 'turbo-rails'
@@ -30,17 +31,19 @@ group :development, :test do
   gem 'faker'
   gem 'pry-rails'
   gem 'rspec-rails', '~> 6.1.0'
+  gem 'tapioca', require: false
 end
 
 group :development do
   gem 'annotate'
   gem 'better_errors'
   gem 'binding_of_caller'
+  gem 'rename'
   gem 'rubocop', '~> 1.63', require: false
   gem 'rubocop-performance', require: false
   gem 'rubocop-rails', require: false
+  gem 'sorbet'
   gem 'web-console'
-  gem 'rename'
 end
 
 group :test do
