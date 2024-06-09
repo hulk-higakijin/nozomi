@@ -432,6 +432,10 @@ module DeviseTokenAuth::Concerns::SetUserByToken
   def set_user_by_token(mapping = T.unsafe(nil)); end
   def update_auth_header; end
 
+  # 参照: https://github.com/Shopify/tapioca/issues/1584
+  sig { returns(User) }
+  def current_user; end
+
   private
 
   def auth_header_from_batch_request; end
@@ -518,7 +522,6 @@ module DeviseTokenAuth::Controllers::Helpers
     #     authenticate_admin!                  # Signs admin in or 401
     #     user_signed_in?                      # Checks whether there is a user signed in or not
     #     admin_signed_in?                     # Checks whether there is an admin signed in or not
-    #     current_user                         # Current signed in user
     #     current_admin                        # Current signed in admin
     #     user_session                         # Session data available only to the user scope
     #     admin_session                        # Session data available only to the admin scope
